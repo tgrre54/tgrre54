@@ -1,0 +1,40 @@
+from bs4 import BeautifulSoup
+import  re  #正则表达式，进行文字匹配
+import urllib.request,urllib.error #指定URL，获取网页数据
+import xlwt  #进行excel操作
+
+ 
+##保存数据
+def  savedata(datalist,savepath):
+    workbook = xlwt.Workbook(encoding="utf-8",style_compression=0) ##style_compression=0不压缩
+    worksheet = workbook.add_sheet("豆瓣电影top250",cell_overwrite_ok=True) #cell_overwrite_ok=True再次写入数据覆盖
+    column = ("电影详情链接", "图片链接", "影片中文名", "影片外国名", "评分", "评价数", "概况", "相关信息")  ##execl项目栏
+    for i in range(0,8):
+        worksheet.write(0,i,column[i]) #将column[i]的内容保存在第0行，第i列
+    for i in range(0,250):
+        data = datalist[i]
+        for j in range(0,8):
+            worksheet.write(i+1,j,data[j])
+    workbook.save(savepath)
+ 
+ 
+##爬取网页
+def geturl(url):
+    head = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+    }
+    req = urllib.request.Request(url,headers=head)
+    try:   ##异常检测
+     response = urllib.request.urlopen(req)
+     html = response.read().decode("utf-8")
+    except urllib.error.URLError as e:
+        if hasattr(e,"code"):    ##如果错误中有这个属性的话
+            print(e.code)
+        if hasattr(e,"reason"):
+            print(e.reason)
+    return html
+ 
+if __name__ == '__main__':
+    main()
+    print("爬取成功！！！")
