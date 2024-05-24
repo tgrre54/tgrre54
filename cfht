@@ -1,0 +1,53 @@
+
+    def show_movie_img(self, file_name):
+        '''
+        更新图片GUI
+        :param file_name: 图片路径
+        :return:
+        '''
+        img_open = Image.open(file_name) #读取本地图片
+        pil_image_resized = resize(160, 230, img_open) #等比例缩放本地图片
+        img = ImageTk.PhotoImage(pil_image_resized) #读入图片
+        self.label_img.config(image=img, width = pil_image_resized.size[0], height = pil_image_resized.size[1])
+        self.label_img.image = img
+
+    def center_window(self, root, w, h):
+        """
+        窗口居于屏幕中央
+        :param root: root
+        :param w: 窗口宽度
+        :param h: 窗口高度
+        :return:
+        """
+        # 获取屏幕 宽、高
+        ws = root.winfo_screenwidth()
+        hs = root.winfo_screenheight()
+
+        # 计算 x, y 位置
+        x = (ws/2) - (w/2)
+        y = (hs/2) - (h/2)
+
+        root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+
+    def clear_tree(self, tree):
+        '''
+        清空表格
+        '''
+        x = tree.get_children()
+        for item in x:
+            tree.delete(item)
+
+    def add_tree(self,list, tree):
+        '''
+        新增数据到表格
+        '''
+        i = 0
+        for subList in list:
+            tree.insert('', 'end', values=subList)
+            i = i + 1
+        tree.grid()
+
+    def searh_movie_in_rating(self):
+        """
+        从排行榜中搜索符合条件的影片信息
+        """
