@@ -1,0 +1,272 @@
+
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+    <body>
+	
+<div id="header">
+	
+
+	
+</div>
+
+<div id="top">
+	
+	<div id="logo"><img src="images/logo.png" ></div>
+	
+	<div id="ad1">广告bar</div>
+	
+	<div id="search">站内搜索</div>
+	
+	<div id="help"><a href="/">帮助</a></div>
+	
+</div>
+
+<nav>
+	
+	<ul>
+		<li><a href="">首页</a></li>
+		<li><a href="">最新电影</a></li>
+		<li><a href="">最新电视剧</a></li>
+		<li><a href="">最新综艺</a></li>
+		<li><a href="">最新动漫</a></li>
+		<li><a href="">3D高清</a></li>
+		<li><a href="">演唱会</a></li>
+		<li><a href="">音乐MV</a></li>
+	</ul>
+	
+</nav>
+
+<div id="liebiaoye">
+	
+	<div id="left">
+		
+		<div id="tou">最新电影</div>
+		
+		<div id="lan-2">
+			<div><a href="">国产电影</a></div>
+			<div><a href="">港台电影</a></div>
+			<div><a href="">欧美电影</a></div>
+			<div><a href="">日韩电影</a></div>
+			<div><a href="">网络电影</a></div>
+		</div>
+		
+	</div>
+
+    <div id="right">
+		
+    	<div id="weizhi">喜乐影视>最新电影>港台电影</div>
+		
+		<div id="wenz-list">
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+			
+			<div class="box">
+				
+				<div class="txt">
+					<a href="">电影《你好，李焕英》改编自2016年出品的同名小品，由贾玲担任编剧，贾玲、沈腾、陈赫、张小斐等主演</a>
+				</div>	
+								
+				<div class="time">
+					大年初一
+				</div>
+				
+			</div>
+				
+		</div>
+		
+    </div>
+	
+</div>
+        
+<div id="footer">
+	
+	<div id="main">
+		本站所有资源通过爬虫获取 如有侵权 联系必删 147258369@163.com
+	</div>
+	
+</div>
+
+
+
+
+
+
+     </body>
+
+	
+
+</html>
