@@ -1,0 +1,84 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 使用后端传递的数据
+        fetch("/get_student_data")
+            .then(response => response.json())
+            .then(data => {
+                // 获取从后端获取的学生信息数据
+                var studentData = data.data;
+ 
+                // 原始数据，json构建
+                $('#table').basictable({
+                    breakpoint: 768
+                });
+ 
+                // 使用后端传递的数据
+                $("#table").reponsetable({
+                    "id": "table",
+                    "operation": "editer",
+                    "type": "numbers",
+                    "colum": [
+                        {"field": "name", "title": "姓名"},
+                        {"field": "g1", "title": "成绩1"},
+                        {"field": "g2", "title": "成绩2"},
+                        {"field": "g3", "title": "成绩3"},
+                        {"field": "g4", "title": "成绩4"},
+                        {"field": "g5", "title": "成绩5"},
+                        {"field": "g6", "title": "成绩6"}
+                    ],
+                    "data": studentData  // 使用后端传递的数据
+                });
+ 
+                // 定义按钮事件
+                layui.use('layer', function () {
+                    layer = layui.layer;
+                });
+            })
+            .catch(error => console.error('获取学生信息数据时发生错误:', error));
+ 
+        // 显示表单
+        window.addNew = function () {
+            $('#editcontent').show();
+        }
+ 
+        // 保存按钮点击事件
+        $('#saveBtn').on('click', function () {
+            // 保存操作
+            var newData = {
+                "name": $("#name").val(),
+                "g1": $("#g1").val(),
+                "g2": $("#g2").val(),
+                "g3": $("#g3").val(),
+                "g4": $("#g4").val(),
+                "g5": $("#g5").val(),
+                "g6": $("#g6").val()
+            };
+ 
+            // 发送异步请求保存到数据库
+            $.ajax({
+                type: 'POST',
+                url: '/saveDataToDatabase',
+                data: JSON.stringify(newData),
+                contentType: 'application/json',
+                success: function (response) {
+                    // 处理保存成功的逻辑
+                    if (response.success) {
+                        // 这里可以根据实际情况做一些提示或者刷新表格等操作
+                        console.log('数据保存成功');
+                        // 隐藏表单
+                        $('#editcontent').hide();
+                        // 清空输入框
+                        $('#editcontent input').val('');
+                        // 刷新表格数据
+                        refreshTable();
+                    } else {
+                        console.error('数据保存失败');
+                    }
+                },
+                error: function (error) {
+                    console.error('保存数据时发生错误:', error);
+                }
+            });
+        });
+ 
+ 
