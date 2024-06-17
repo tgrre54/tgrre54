@@ -1,0 +1,80 @@
+from time import sleep
+from pyecharts.charts import Pie
+from pyecharts.charts import Map
+from pyecharts.charts import WordCloud
+from pyecharts.charts import Bar
+from pyecharts import options as opts
+from requests import post
+import PIL.Image as Image
+import re
+import random
+import math
+from cv2 import CascadeClassifier
+from cv2 import imread
+from cv2 import cvtColor
+from cv2 import COLOR_BGR2GRAY
+
+
+# 引入打开文件所用的库
+# Window与Linux和Mac OSX有所不同
+# lambda用来定义一个匿名函数，可实现类似c语言的define定义
+if('Windows' in system()):
+    # Windows
+    from os import startfile
+    open_html = lambda x : startfile(x)
+elif('Darwin' in system()):
+    # MacOSX
+    from subprocess import call
+    open_html = lambda x : call(["open", x])
+else:
+    # Linux
+    from subprocess import call
+    open_html = lambda x: call(["xdg-open", x])
+
+
+# 分析好友性别比例
+def sex_ratio():
+
+    # 初始化
+    male, female, other = 0, 0, 0
+
+    # 遍历
+    for user in friends:
+        if(user.sex == 1):
+            male += 1
+        elif(user.sex == 2):
+            female += 1
+        else:
+            other += 1
+
+    name_list = ['男性', '女性', '未设置']
+    num_list = [male, female, other]
+
+    pie = Pie()
+    pie.add("微信好友性别比例", [list(z) for z in zip(name_list, num_list)])
+    pie.set_global_opts(title_opts=opts.TitleOpts(title="微信好友性别比例"))
+    pie.set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
+    pie.render('data/好友性别比例.html')
+
+
+# 分析好友地区分布
+def region_distribution():
+
+    # 使用一个字典统计好友地区分布数量
+    province_dict = {'北京': 0, '上海': 0, '天津': 0, '重庆': 0,
+                     '河北': 0, '山西': 0, '吉林': 0, '辽宁': 0, '黑龙江': 0,
+                     '陕西': 0, '甘肃': 0, '青海': 0, '山东': 0, '福建': 0,
+                     '浙江': 0, '台湾': 0, '河南': 0, '湖北': 0, '湖南': 0,
+                     '江西': 0, '江苏': 0, '安徽': 0, '广东': 0, '海南': 0,
+                     '四川': 0, '贵州': 0, '云南': 0, '内蒙古': 0, '新疆': 0,
+                     '宁夏': 0, '广西': 0, '西藏': 0, '香港': 0, '澳门': 0}
+
+    # 遍历
+    for user in friends:
+        # 判断省份是否存在，有可能是外国的，这种情况不考虑
+        if (user.province in province_dict):
+            key = user.province
+            province_dict[key] += 1
+
+    province = list(province_dict.keys())
+    values = list(province_dict.values
