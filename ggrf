@@ -1,0 +1,18 @@
+from flask import request
+ 
+@app.route('/api/data')
+def get_data():
+    key1 = request.args.get('key1')  # 获取key1的值，如果不存在则返回None
+    key2 = request.args['key2']      # 直接通过键访问，如果不存在会抛出KeyError
+    key3 = request.args.get_list('key3')  # 取出存在同名key的所有值
+    return f"Key1: {key1}, Key2: {key2}, Key3: {key3}"
+from flask import request, jsonify
+ 
+@app.route('/api/data', methods=['POST'])
+def post_data():
+    if request.is_json:  # is_json属性可以判断返回的是否是json数据
+        data = request.get_json()          # 获取JSON格式的POST数据
+        key1 = data.get('key1')           # 如果数据是JSON对象，则这样获取
+    else:
+        key1 = request.form.get('key1')    # 获取表单形式的POST数据
+    return jsonify({"received_key1": key1})
