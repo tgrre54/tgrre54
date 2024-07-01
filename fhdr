@@ -1,0 +1,21 @@
+    QFont font("Arial", 30, QFont::Normal);
+    QLabel *title_label = new QLabel(this);
+    title_label->setGeometry(40,180,260,50);//设置坐标
+    title_label->setFont(font);
+    title_label->setText("智能车载终端");
+ 
+    m_pLCD = new QLCDNumber(this);
+    // 设置能显示的位数
+    m_pLCD->setDigitCount(8);
+ 
+    m_pLCD->setGeometry(20,30,230,100);
+    // 设置显示的模式为十进制
+    m_pLCD->setMode(QLCDNumber::Dec);
+    // 设置样式
+    m_pLCD->setStyleSheet("border: 1px solid green;font-size:70%;color: green");
+    m_pLCD->resize(300,100);
+ 
+    //定时器刷新显示
+    QTimer *timer = new QTimer(this);
+    timer->start(200);
+ 
