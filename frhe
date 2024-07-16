@@ -1,0 +1,5 @@
+def to_excel(data_list):
+    """写入Excel"""
+    df = pd.DataFrame(data_list)
+    df.drop_duplicates()  # 删除重复数据
+    df.to_excel('当当采集数据集.xlsx')
